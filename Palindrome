@@ -1,0 +1,22 @@
+class Solution {
+    public int reverse(int x) {
+        long res = 0;
+        boolean isNeg = x < 0;
+        x = Math.abs(x);
+        while(x>0){
+            int temp = x%10;
+            res = (res*10)+temp;
+            x = x/10;
+        }
+        if(isNeg){
+            res = -res;
+        }
+        if( res > Integer.MIN_VALUE  & res < Integer.MAX_VALUE){
+            return(int) res;
+        }
+        else{
+            return 0;
+        }
+        
+    }
+}
